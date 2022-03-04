@@ -142,6 +142,7 @@ namespace Bakery.Tests
 
       //Act
       newVendor.AddOrder(newOrder);
+      newVendor.RemoveOrder(newOrder);
       List<Order> result = newVendor.Orders;
 
       //Assert

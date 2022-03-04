@@ -40,7 +40,7 @@ namespace Bakery.Models
 
     public void RemoveOrder(Order order)
     {
-
+      Orders.Remove(order);
     }
   }
 }
