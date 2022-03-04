@@ -180,5 +180,18 @@ namespace Bakery.Tests
       //Assert
       Assert.AreEqual(1, result);
     }
+
+    [TestMethod]
+    public void GetAll_ReturnsEmptyListFromDatabase_OrderList()
+    {
+      // Arrange
+      List<Order> newList = new List<Order> { };
+
+      // Act
+      List<Order> result = Order.GetAll();
+
+      // Assert
+      CollectionAssert.AreEqual(newList, result);
+    }
   }
 }
