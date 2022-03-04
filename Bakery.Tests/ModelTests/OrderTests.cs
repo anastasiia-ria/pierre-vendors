@@ -10,7 +10,7 @@ namespace Bakery.Tests
   {
     public void Dispose()
     {
-      Category.ClearAll();
+      Order.ClearAll();
     }
 
     [TestMethod]
