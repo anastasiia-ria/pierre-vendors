@@ -65,5 +65,25 @@ namespace Bakery.Controllers
       vendor.RemoveVendor();
       return View();
     }
+
+    [HttpPost("/vendors/{vendorId}/edit")]
+    public ActionResult Edit(int vendorId)
+    {
+      Vendor vendor = Vendor.Find(vendorId);
+      return View(vendor);
+    }
+
+    [HttpPost("/vendors/{vendorId}")]
+    public ActionResult ShowEdit(int vendorId, string vendorName, string vendorDescription)
+    {
+      Vendor vendor = Vendor.Find(vendorId);
+      vendor.Name = vendorName;
+      vendor.Description = vendorDescription;
+      Dictionary<string, object> model = new Dictionary<string, object>();
+      List<Order> vendorOrders = vendor.Orders;
+      model.Add("vendor", vendor);
+      model.Add("orders", vendorOrders);
+      return View("Show", model);
+    }
   }
 }

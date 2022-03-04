@@ -1,0 +1,12 @@
+<h1>Edit</h1>
+
+<form action='/vendors/@Model.Id' method="post">
+  <label for="vendorName">Vendor name</label>
+  <input id="vendorName" name="vendorName" type="text" value='@Model.Name'>
+  <label for="vendorDescription">Vendor description</label>
+  <input id="vendorDescription" name="vendorDescription" type="text" value='@Model.Description'>
+  <button type='submit'>Edit Vendor</button>
+</form>
+@{
+  Layout = "_Layout";
+}
