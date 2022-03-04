@@ -16,6 +16,7 @@ namespace Bakery.Models
       Title = title;
       Description = description;
       Price = price;
+      Date = date;
     }
   }
 }
