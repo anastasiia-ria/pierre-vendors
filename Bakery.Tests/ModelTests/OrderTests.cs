@@ -6,8 +6,13 @@ using System.Collections.Generic;
 namespace Bakery.Tests
 {
   [TestClass]
-  public class OrderTests : IDisposable
+  public class OrderTests
   {
-
+    [TestMethod]
+    public void OrderConstructor_CreatesInstanceOfOrder_Order()
+    {
+      Order newOrder = new Order("title", "description", 0, "date");
+      Assert.AreEqual(typeof(Order), newOrder.GetType());
+    }
   }
 }
