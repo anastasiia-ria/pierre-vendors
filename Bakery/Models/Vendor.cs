@@ -14,6 +14,8 @@ namespace Bakery.Models
     {
       Name = vendorName;
       Description = vendorDescription;
+      _instances.Add(this);
+      Id = _instances.Count;
     }
 
     public static void ClearAll()
