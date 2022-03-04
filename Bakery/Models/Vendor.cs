@@ -16,5 +16,10 @@ namespace Bakery.Models
       Description = vendorDescription;
     }
 
+    public static void ClearAll()
+    {
+      _instances.Clear();
+    }
+
   }
 }
