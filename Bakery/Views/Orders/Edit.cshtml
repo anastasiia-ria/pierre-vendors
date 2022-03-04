@@ -1,0 +1,17 @@
+<h1>Edit</h1>
+
+<form action='/vendors/@Model["vendor"].Id/orders/@Model["order"].Id' method="post">
+      <input id="vendorId" name="vendorId" type="hidden" value='@Model["vendor"].Id'>
+      <label for="orderTitle">Order Title</label>
+      <input id="orderTitle" name="orderTitle" type="text" value='@Model["order"].Title'>
+      <label for="orderDescription">Order Description</label>
+      <input id="orderDescription" name="orderDescription" type="text" value='@Model["order"].Description'>
+      <label for="orderPrice">Order Price</label>
+      <input id="orderPrice" name="orderPrice" type="text" value='@Model["order"].Price'>
+      <label for="orderDate">Order Date</label>
+      <input id="orderDate" name="orderDate" type="text" value='@Model["order"].Date'>
+      <button type='submit'>Edit Order</button>
+    </form>
+    @{
+      Layout = "_Layout";
+    }
