@@ -105,6 +105,25 @@ namespace Bakery.Tests
     }
 
     [TestMethod]
+    public void SetPrice_SetPrice_String()
+    {
+      //Arrange
+      string title = "Test Title";
+      string description = "Test Description";
+      int price = 35;
+      string date = "Test Date";
+      Order newOrder = new Order(title, description, price, date);
+
+      //Act
+      int updatedPrice = 40;
+      newOrder.Price = updatedPrice;
+      int result = newOrder.Price;
+
+      //Assert
+      Assert.AreEqual(updatedPrice, result);
+    }
+
+    [TestMethod]
     public void GetDate_ReturnsDate_String()
     {
       //Arrange
