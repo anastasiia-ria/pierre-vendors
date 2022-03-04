@@ -18,5 +18,10 @@ namespace Bakery.Models
       Price = price;
       Date = date;
     }
+
+    public static void ClearAll()
+    {
+      _instances.Clear();
+    }
   }
 }
