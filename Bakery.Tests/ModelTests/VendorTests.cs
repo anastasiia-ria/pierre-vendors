@@ -124,5 +124,28 @@ namespace Bakery.Tests
       //Assert
       CollectionAssert.AreEqual(newList, result);
     }
+
+    [TestMethod]
+    public void RemoveOrder_RemovesOrderFromVendor_OrderList()
+    {
+      //Arrange
+      string titleO = "Order Title";
+      string descriptionO = "Order Description";
+      int priceO = 0;
+      string dateO = "Order Date";
+      Order newOrder = new Order(titleO, descriptionO, priceO, dateO);
+
+      List<Order> newList = new List<Order> { };
+      string nameV = "Vendor Name";
+      string descriptionV = "Vendor Description";
+      Vendor newVendor = new Vendor(nameV, descriptionV);
+
+      //Act
+      newVendor.AddOrder(newOrder);
+      List<Order> result = newVendor.Orders;
+
+      //Assert
+      CollectionAssert.AreEqual(newList, result);
+    }
   }
 }

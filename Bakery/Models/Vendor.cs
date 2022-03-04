@@ -37,5 +37,10 @@ namespace Bakery.Models
     {
       Orders.Add(order);
     }
+
+    public void RemoveOrder(Order order)
+    {
+
+    }
   }
 }
