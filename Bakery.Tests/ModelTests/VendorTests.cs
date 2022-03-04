@@ -102,5 +102,27 @@ namespace Bakery.Tests
       Assert.AreEqual(newVendor2, result);
     }
 
+    [TestMethod]
+    public void AddOrder_AssociatesOrderWithVendor_OrderList()
+    {
+      //Arrange
+      string titleO = "Order Title";
+      string descriptionO = "Order Description";
+      int priceO = 0;
+      string dateO = "Order Date";
+      Order newOrder = new Order(titleO, descriptionO, priceO, dateO);
+
+      List<Order> newList = new List<Order> { newOrder };
+      string nameV = "Vendor Name";
+      string descriptionV = "Vendor Description";
+      Vendor newVendor = new Vendor(nameV, descriptionV);
+
+      //Act
+      newVendor.AddOrder(newOrder);
+      List<Order> result = newVendor.Orders;
+
+      //Assert
+      CollectionAssert.AreEqual(newList, result);
+    }
   }
 }
