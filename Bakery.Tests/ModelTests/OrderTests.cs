@@ -23,8 +23,8 @@ namespace Bakery.Tests
       int price = 0;
       string date = "Test Date";
       Order newOrder = new Order(title, description, price, date);
-      string result = newOrder.Description;
-      Assert.AreEqual(description, result);
+      string result = newOrder.Title;
+      Assert.AreEqual(title, result);
     }
   }
 }

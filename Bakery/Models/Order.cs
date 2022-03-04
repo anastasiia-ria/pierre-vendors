@@ -13,6 +13,7 @@ namespace Bakery.Models
 
     public Order(string title, string description, int price, string date)
     {
+      Title = title;
     }
   }
 }
