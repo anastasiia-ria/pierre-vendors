@@ -24,11 +24,15 @@ namespace Bakery.Controllers
       return View(model);
     }
 
-    [HttpPost("/orders/delete")]
-    public ActionResult DeleteAll()
+    [HttpPost("/vendors/{vendorId}/orders/delete")]
+    public ActionResult DeleteAll(int vendorId)
     {
-      Order.ClearAll();
-      return View();
+      Vendor vendor = Vendor.Find(vendorId);
+      foreach (Order order in vendor.Orders)
+      {
+        Order.ClearAll();
+      }
+      return View(vendor);
     }
   }
 }
