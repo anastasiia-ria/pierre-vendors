@@ -216,5 +216,28 @@ namespace Bakery.Tests
       // Assert
       CollectionAssert.AreEqual(newList, result);
     }
+
+    [TestMethod]
+    public void Find_ReturnsCorrectOrder_Order()
+    {
+      //Arrange
+      string title01 = "Test Title1";
+      string description01 = "Test Description1";
+      int price01 = 0;
+      string date01 = "Test Date1";
+      string title02 = "Test Title2";
+      string description02 = "Test Description2";
+      int price02 = 1;
+      string date02 = "Test Date2";
+      Order newOrder1 = new Order(title01, description01, price01, date01);
+      Order newOrder2 = new Order(title02, description02, price02, date02);
+
+      //Act
+      Order result = Order.Find(2);
+
+      //Assert
+      Assert.AreEqual(newOrder2, result);
+    }
+
   }
 }
