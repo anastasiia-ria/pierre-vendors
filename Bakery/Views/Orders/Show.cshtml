@@ -5,7 +5,7 @@
     <title>Pierre's Vendors!</title>
   </head>
   <body>
-    <h1>To Do List Order Details: </h1>
+    <h1>Order Details: </h1>
 
     <h2>@Model["order"].Title</h2>
     <p>@Model["order"].Description</p>
@@ -15,6 +15,11 @@
     <p>@Model["vendor"].Description</p>
 
     <a href='/vendors/@Model["vendor"].Id/orders/new'>Add another order</a>
+    <form action='/vendors/@Model["vendor"].Id/orders/@Model["vendor"].Id/delete' method="post">
+      <button type="submit" name="button">Delete this Order</button>
+    </form>
+
+    <a href='/vendors/@Model["vendor"].Id'>Back to @Model["vendor"] orders</a>
     <a href='/vendors'>View all vendors</a>
     @{
       Layout = "_Layout";
