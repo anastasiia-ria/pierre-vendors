@@ -50,5 +50,17 @@ namespace Bakery.Tests
       int result = newOrder.Price;
       Assert.AreEqual(price, result);
     }
+
+    [TestMethod]
+    public void GetDate_ReturnsDate_String()
+    {
+      string title = "Test Title";
+      string description = "Test Description";
+      int price = 0;
+      string date = "Test Date";
+      Order newOrder = new Order(title, description, price, date);
+      string result = newOrder.Date;
+      Assert.AreEqual(date, result);
+    }
   }
 }
