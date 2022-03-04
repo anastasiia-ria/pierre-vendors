@@ -45,7 +45,7 @@ namespace Bakery.Models
 
     public void RemoveVendor()
     {
-
+      _instances.Remove(this);
     }
   }
 }
