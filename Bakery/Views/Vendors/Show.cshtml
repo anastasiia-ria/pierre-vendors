@@ -8,19 +8,18 @@
   <body>
     @using Bakery.Models;
 
-    <h1>Vendors</h1>
+    <h3>Here are all the orders in this vendor:</h3>
 
-    @if (@Model.Count == 0)
+    <ol>
+    @foreach (Order order in @Model["orders"])
     {
-      <h3>No vendors have been added yet!</h3>
-    } 
-
-    @foreach (Vendor vendor in Model)
-    {
-      <h3><a href='/vendors/@vendor.Id'>@vendor.Name</a></h3>
+      <li><a href='/vendors/@Model["vendor"].Id/orders/@order.Id'>@order.Title</a></li>
     }
+    </ol>
 
-    <p><a href='/'>Back home</a></p>
+    <p><a href='/vendors/@Model["vendor"].Id/orders/new'>Add a new order</a></p>
+    <p><a href='/vendors'>Return to vendor list</a></p>
+    <p><a href='/'>Return to Main Page</a></p>
     @{
       Layout = "_Layout";
     }
