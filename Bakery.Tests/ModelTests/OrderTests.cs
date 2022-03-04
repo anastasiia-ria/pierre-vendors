@@ -158,5 +158,22 @@ namespace Bakery.Tests
       //Assert
       Assert.AreEqual(updatedDate, result);
     }
+
+    [TestMethod]
+    public void GetId_ReturnsOrderId_Int()
+    {
+      //Arrange
+      string title = "Test Title";
+      string description = "Test Description";
+      int price = 0;
+      string date = "Test Date";
+      Order newOrder = new Order(title, description, price, date);
+
+      //Act
+      int result = newOrder.Id;
+
+      //Assert
+      Assert.AreEqual(1, result);
+    }
   }
 }
