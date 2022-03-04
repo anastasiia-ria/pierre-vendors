@@ -42,5 +42,10 @@ namespace Bakery.Models
     {
       Orders.Remove(order);
     }
+
+    public void RemoveVendor()
+    {
+
+    }
   }
 }

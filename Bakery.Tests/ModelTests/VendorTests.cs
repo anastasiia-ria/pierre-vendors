@@ -148,5 +148,23 @@ namespace Bakery.Tests
       //Assert
       CollectionAssert.AreEqual(newList, result);
     }
+
+    [TestMethod]
+    public void RemoveVendor_RemovesVendorFromVendor_VendorList()
+    {
+      //Arrange
+      string name01 = "Suzie's Cafe";
+      string name02 = "Panera Bread";
+      string description01 = "Cafe";
+      string description02 = "Diner";
+      Vendor newVendor1 = new Vendor(name01, description01);
+      Vendor newVendor2 = new Vendor(name02, description02);
+      List<Vendor> newList = new List<Vendor> { newVendor2 };
+      //Act
+      newVendor1.RemoveVendor();
+      List<Vendor> result = Vendor.GetAll();
+      //Assert
+      CollectionAssert.AreEqual(newList, result);
+    }
   }
 }
