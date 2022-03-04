@@ -16,7 +16,7 @@ namespace Bakery.Tests
     }
 
     [TestMethod]
-    public void GetTitle_Returns_Description_String()
+    public void GetTitle_ReturnsTitle_String()
     {
       string title = "Test Title";
       string description = "Test Description";
@@ -25,6 +25,18 @@ namespace Bakery.Tests
       Order newOrder = new Order(title, description, price, date);
       string result = newOrder.Title;
       Assert.AreEqual(title, result);
+    }
+
+    [TestMethod]
+    public void GetDescription_ReturnsDescription_String()
+    {
+      string title = "Test Title";
+      string description = "Test Description";
+      int price = 0;
+      string date = "Test Date";
+      Order newOrder = new Order(title, description, price, date);
+      string result = newOrder.Description;
+      Assert.AreEqual(description, result);
     }
   }
 }
