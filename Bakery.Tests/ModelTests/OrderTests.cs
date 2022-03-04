@@ -193,5 +193,28 @@ namespace Bakery.Tests
       // Assert
       CollectionAssert.AreEqual(newList, result);
     }
+
+    [TestMethod]
+    public void GetAll_ReturnsOrders_OrderList()
+    {
+      // Arrange
+      string title01 = "Test Title1";
+      string description01 = "Test Description1";
+      int price01 = 0;
+      string date01 = "Test Date1";
+      string title02 = "Test Title2";
+      string description02 = "Test Description2";
+      int price02 = 1;
+      string date02 = "Test Date2";
+      Order newOrder1 = new Order(title01, description01, price01, date01);
+      Order newOrder2 = new Order(title02, description02, price02, date02);
+      List<Order> newList = new List<Order> { newOrder1, newOrder2 };
+
+      //Act
+      List<Order> result = Order.GetAll();
+
+      // Assert
+      CollectionAssert.AreEqual(newList, result);
+    }
   }
 }
