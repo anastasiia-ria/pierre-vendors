@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Pierre's Vendors!</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  </head>
+  <body>
+    <h1>To Do List Order Details: </h1>
+
+    <h2>@Model["order"].Title</h2>
+    <p>@Model["order"].Description</p>
+    <p>@Model["order"].Price</p>
+    <p>@Model["order"].Date</p>
+    <h3>Vendor: @Model["vendor"].Name</h3>
+    <p>@Model["vendor"].Description</p>
+
+    <a href='/vendors/@Model["vendor"].Id/orders/new'>Add another order</a>
+    <a href='/vendors'>View all vendors</a>
+  </body>
+</html>
