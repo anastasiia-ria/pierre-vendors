@@ -139,5 +139,24 @@ namespace Bakery.Tests
       //Assert
       Assert.AreEqual(date, result);
     }
+
+    [TestMethod]
+    public void SetDate_SetDate_String()
+    {
+      //Arrange
+      string title = "Test Title";
+      string description = "Test Description";
+      int price = 0;
+      string date = "Test Date";
+      Order newOrder = new Order(title, description, price, date);
+
+      //Act
+      string updatedDate = "Updated Date";
+      newOrder.Date = updatedDate;
+      string result = newOrder.Date;
+
+      //Assert
+      Assert.AreEqual(updatedDate, result);
+    }
   }
 }
