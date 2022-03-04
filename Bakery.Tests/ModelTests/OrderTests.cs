@@ -33,6 +33,25 @@ namespace Bakery.Tests
     }
 
     [TestMethod]
+    public void SetTitle_SetTitle_String()
+    {
+      //Arrange
+      string title = "Test Title";
+      string description = "Test Description";
+      int price = 0;
+      string date = "Test Date";
+      Order newOrder = new Order(title, description, price, date);
+
+      //Act
+      string updatedTitle = "Updated Title";
+      newOrder.Title = updatedTitle;
+      string result = newOrder.Title;
+
+      //Assert
+      Assert.AreEqual(updatedTitle, result);
+    }
+
+    [TestMethod]
     public void GetDescription_ReturnsDescription_String()
     {
       //Arrange
