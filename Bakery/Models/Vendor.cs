@@ -13,6 +13,7 @@ namespace Bakery.Models
     public Vendor(string vendorName, string vendorDescription)
     {
       Name = vendorName;
+      Description = vendorDescription;
     }
 
   }
