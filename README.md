@@ -54,4 +54,4 @@ Pierre's Vendors Tracker tracks the vendors that purchase baked goods from Pierr
 
 [ISC](https://opensource.org/licenses/ISC)
 
-Copyright (c) 02/11/2022 Anastasiia Riabets
+Copyright (c) 03/04/2022 Anastasiia Riabets
