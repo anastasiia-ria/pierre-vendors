@@ -10,27 +10,41 @@
     <h3>Vendor: @Model["vendor"].Name</h3>
     <p>@Model["vendor"].Description</p>
 
-    <h3>Here are all the orders placed by this vendor:</h3>
-
-    <ol>
-    @foreach (Order order in @Model["orders"])
+    @if (@Model["orders"].Count == 0)
     {
-      <li><a href='/vendors/@Model["vendor"].Id/orders/@order.Id'>@order.Title</a></li>
+      <h3>No orders have been added yet!</h3>
+    } else {
+      <h3>Here are all the orders placed by this vendor:</h3>
     }
+    
+    <ol>
+      @foreach (Order order in @Model["orders"])
+      {
+        <li><a href='/vendors/@Model["vendor"].Id/orders/@order.Id'>@order.Title</a></li>
+      }
     </ol>
 
-    <p><a href='/vendors/@Model["vendor"].Id/orders/new'>Add a new order</a></p>
-     <form action='/vendors/@Model["vendor"].Id/orders/delete' method="post">
-      <button type="submit" name="button">Clear All Orders</button>
-    </form>
-     <form action='/vendors/@Model["vendor"].Id/edit' method="post">
-      <button type="submit" name="button">Edit this Vendor</button>
-    </form>
-    <form action='/vendors/@Model["vendor"].Id/delete' method="post">
-      <button type="submit" name="button">Delete this Vendor</button>
-    </form>
-    <p><a href='/vendors'>Return to vendor list</a></p>
-    <p><a href='/'>Return to Main Page</a></p>
+    <div class="button-group">
+      <a href='/vendors/@Model["vendor"].Id/orders/new'>Add a new order</a>
+      <form action='/vendors/@Model["vendor"].Id/orders/delete' method="post">
+        <button type="submit" name="button">Clear All Orders</button>
+      </form>
+    </div>
+
+    <div class="button-group"></div>
+      <form action='/vendors/@Model["vendor"].Id/edit' method="post">
+        <button type="submit" name="button">Edit this Vendor</button>
+      </form>
+      <form action='/vendors/@Model["vendor"].Id/delete' method="post">
+        <button type="submit" name="button">Delete this Vendor</button>
+      </form>
+    </div>
+
+    <div class="navigation">
+      <a href='/vendors'>All vendors</a>
+      <a href='/'>Home</a>
+    </div>
+    
     @{
       Layout = "_Layout";
     }

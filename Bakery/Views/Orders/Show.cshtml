@@ -7,23 +7,29 @@
   <body>
     <h1>Order Details: </h1>
 
-    <h2>@Model["order"].Title</h2>
-    <p>@Model["order"].Description</p>
-    <p>@Model["order"].Price</p>
-    <p>@Model["order"].Date</p>
+    <h2>Title: @Model["order"].Title</h2>
+    <p>Description: @Model["order"].Description</p>
+    <p>Price: @Model["order"].Price</p>
+    <p>Date: @Model["order"].Date</p>
     <h3>Vendor: @Model["vendor"].Name</h3>
     <p>@Model["vendor"].Description</p>
 
-    <a href='/vendors/@Model["vendor"].Id/orders/new'>Add another order</a>
-    <form action='/vendors/@Model["vendor"].Id/orders/@Model["vendor"].Id/edit' method="post">
-      <button type="submit" name="button">Edit this Order</button>
-    </form>
-    <form action='/vendors/@Model["vendor"].Id/orders/@Model["vendor"].Id/delete' method="post">
-      <button type="submit" name="button">Delete this Order</button>
-    </form>
-
-    <a href='/vendors/@Model["vendor"].Id'>Back to @Model["vendor"] orders</a>
-    <a href='/vendors'>View all vendors</a>
+    <div class="button-group">
+      <a href='/vendors/@Model["vendor"].Id/orders/new'>Add another order</a>
+      <form action='/vendors/@Model["vendor"].Id/orders/@Model["vendor"].Id/edit' method="post">
+        <button type="submit" name="button">Edit this Order</button>
+      </form>
+      <form action='/vendors/@Model["vendor"].Id/orders/@Model["vendor"].Id/delete' method="post">
+        <button type="submit" name="button">Delete this Order</button>
+      </form>
+    </div>
+    
+    <div class="navigation">
+      <a href='/vendors/@Model["vendor"].Id'>@Model["vendor"].Name orders</a>
+      <a href='/vendors'>All vendors</a>
+      <a href='/'>Home</a>
+    </div>
+    
     @{
       Layout = "_Layout";
     }

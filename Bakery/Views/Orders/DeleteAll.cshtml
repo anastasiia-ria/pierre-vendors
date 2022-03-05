@@ -1,3 +1,9 @@
-<h1>All orders placed by @Model.Name has been deleted!</h1>
-<p><a href='/vendors/@Model.Id'>Back to vendor</a></p>
-<p><a href='/vendors'>Back to all vendors</a></p>
+<h1>All orders placed by @Model.Name have been deleted!</h1>
+<div class="navigation">
+  <a href='/vendors/@Model.Id'>@Model.Name</a>
+  <a href="/vendors">All Vendors</a>
+  <a href="/">Home</a>
+</div>
+@{
+  Layout = "_Layout";
+}

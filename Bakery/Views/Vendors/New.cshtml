@@ -6,18 +6,20 @@
   </head>
   <body>
     <h1>Add a vendor</h1>
-    <p>Add a vendor here:</p>
 
     <form action="/vendors" method="post">
       <label for="vendorName">Vendor name</label>
-      <input id="vendorName" name="vendorName" type="text">
+      <input id="vendorName" name="vendorName" type="text" required>
       <label for="vendorDescription">Vendor description</label>
       <input id="vendorDescription" name="vendorDescription" type="text">
       <button type="submit">Add</button>
     </form>
 
-    <p><a href="/">Back home</a></p>
-    <p><a href="/vendors">Back to vendors</a></p>
+    <div class="navigation">
+      <a href="/vendors">All Vendors</a>
+      <a href="/">Home</a>
+    </div>
+    
     @{
       Layout = "_Layout";
     }

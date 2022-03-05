@@ -8,7 +8,7 @@
     <h1>Add a new order to @Model.Name</h1>
 
     <form action="/vendors/@Model.Id/orders" method="post">
-      <input id="vendorId" name="vendorId" type="hidden" value="@Model.Id">
+      <input id="vendorId" name="vendorId" type="hidden" value="@Model.Id" required>
       <label for="orderTitle">Order Title</label>
       <input id="orderTitle" name="orderTitle" type="text">
       <label for="orderDescription">Order Description</label>
@@ -19,6 +19,12 @@
       <input id="orderDate" name="orderDate" type="text">
       <button type='submit'>Add Order</button>
     </form>
+    <div class="navigation">
+      <a href='/vendors/@Model.Id'>Cancel</a>
+      <a href="/vendors">All Vendors</a>
+      <a href="/">Home</a>
+    </div>
+    
     @{
       Layout = "_Layout";
     }

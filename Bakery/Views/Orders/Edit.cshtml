@@ -12,6 +12,11 @@
   <input id="orderDate" name="orderDate" type="text" value='@Model["order"].Date'>
   <button type='submit'>Edit Order</button>
 </form>
+<div class="navigation">
+  <a href='/vendors/@Model["vendor"].Id/orders/@Model["order"].Id'>Cancel</a>
+  <a href="/vendors">All Vendors</a>
+  <a href="/">Home</a>
+</div>
 @{
   Layout = "_Layout";
 }

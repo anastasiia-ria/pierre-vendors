@@ -7,6 +7,11 @@
   <input id="vendorDescription" name="vendorDescription" type="text" value='@Model.Description'>
   <button type='submit'>Edit Vendor</button>
 </form>
+<div class="navigation">
+  <a href='/vendors/@Model.Id'>Cancel</a>
+  <a href='/vendors'>All vendors</a>
+  <a href='/'>Home</a>
+</div>
 @{
   Layout = "_Layout";
 }
